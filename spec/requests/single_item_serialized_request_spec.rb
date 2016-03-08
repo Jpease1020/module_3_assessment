@@ -9,10 +9,15 @@ describe "api/v1/item/:id returns an item serialized" do
                 image_url: "image_url#{i}")
       end
 
-      get "/api/v1/item/1", {}, { "Accept" => "application/json" }
+      get "/api/v1/items/1", {}, { "Accept" => "application/json" }
       expect(response.status).to eq 200
-      items = JSON.parse(response.body)
-      assert_equal "item0", items.first['name']
+      item = JSON.parse(response.body)
+      assert_equal "item0", item['name']
+
+      get "/api/v1/items/12", {}, { "Accept" => "application/json" }
+      expect(response.status).to eq 200
+      item = JSON.parse(response.body)
+      assert_equal "item11", item['name']
     end
   end
 end
