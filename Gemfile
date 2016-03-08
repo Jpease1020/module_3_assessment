@@ -15,6 +15,7 @@ gem "less-rails-bootstrap"
 gem 'figaro'
 gem 'faraday'
 gem 'rspec'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'
