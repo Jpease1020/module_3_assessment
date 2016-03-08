@@ -32,23 +32,3 @@ describe "post request to api/v1/item/:id returns a new item serialized" do
     end
   end
 end
-
-
-# describe "POST /movies" do
-#     it "creates a movie" do
-#       movie_params = {
-#         "movie" => {
-#           "title" => "Indiana Jones and the Temple of Doom"
-#         }
-#       }.to_json
-#
-#       request_headers = {
-#         "Accept" => "application/json",
-#         "Content-Type" => "application/json"
-#       }
-#
-#       post "/movies", movie_params, request_headers
-#
-#       expect(response.status).to eq 201 # created
-#       expect(Movie.first.title).to eq "Indiana Jones and the Temple of Doom"
-#     end
