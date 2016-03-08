@@ -12,13 +12,26 @@ gem "faker"
 gem "haml-rails"
 gem "therubyracer"
 gem "less-rails-bootstrap"
-gem "minitest-rails"
-
-group :development do
-  gem "spring"
-end
+gem 'figaro'
+gem 'faraday'
+gem 'rspec'
 
 group :development, :test do
-  gem "minitest-rails-capybara"
-  gem "pry", :require => "pry"
+  gem 'byebug'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails', :require => false
+  gem 'database_cleaner'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'vcr'
 end
