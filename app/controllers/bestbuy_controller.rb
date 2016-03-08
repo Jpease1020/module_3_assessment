@@ -4,7 +4,7 @@ class BestbuyController < ApplicationController
     if Product.all(params[:q])
       @products = Product.all(params[:q])
     else
-      render 404
+      render text: "404"
     end
   end
 end

@@ -10,14 +10,15 @@ class BestbuyService
   end
 
   def product_search(search_words)
+    search_words = search_words.split(" ")
+    search_words = search_words.map do |word|
+      "search=#{word}"
+    end
+    byebug
     conn.get do |req|
-      # byebug                           # GET http://sushi.com/search?page=2&limit=100
       req.url "products(search=#{search_words})"
-      # format=json
       req.params['format']     = 'json'
-      # show=sku,name,customerReviewAverage,shortDescription,image,salePrice
       req.params['show']   = 'sku,name,customerReviewAverage,shortDescription,image,salePrice'
-      # pageSize=15
       req.params['pageSize'] = 15
       req.params['apiKey'] = '57f9xyfxh9ujc522eek6ugd4'
     end
