@@ -10,10 +10,14 @@ describe "api/v1/items returns all items serialized" do
       end
 
       get "/api/v1/items", {}, { "Accept" => "application/json" }
+
       expect(response.status).to eq 200
       items = JSON.parse(response.body)
+
       assert_equal "item0", items.first['name']
       assert_equal "item19", items.last['name']
+      assert_equal nil, items.first['created_at']
+      assert_equal nil, items.fourth['updated_at']
     end
   end
 end

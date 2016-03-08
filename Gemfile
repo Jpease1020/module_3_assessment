@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'rspec'
 gem 'responders'
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
 group :development, :test do
   gem 'byebug'

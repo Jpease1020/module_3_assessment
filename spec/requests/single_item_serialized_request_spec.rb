@@ -12,12 +12,17 @@ describe "api/v1/item/:id returns an item serialized" do
       get "/api/v1/items/1", {}, { "Accept" => "application/json" }
       expect(response.status).to eq 200
       item = JSON.parse(response.body)
+
       assert_equal "item0", item['name']
+      assert_equal nil, item['created_at']
 
       get "/api/v1/items/12", {}, { "Accept" => "application/json" }
       expect(response.status).to eq 200
       item = JSON.parse(response.body)
+
       assert_equal "item11", item['name']
+      assert_equal nil, item['created_at']
+      assert_equal nil, item['updated_at']
     end
   end
 end
