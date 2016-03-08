@@ -10,10 +10,14 @@ describe "delete request to api/v1/item/:id returns an item serialized" do
       end
 
       delete "/api/v1/items/1", {}, { "Accept" => "application/json" }
-
       expect(response.status).to eq 204
 
       refute Item.find_by(id: 1)
+
+      delete "/api/v1/items/16", {}, { "Accept" => "application/json" }
+      expect(response.status).to eq 204
+
+      refute Item.find_by(id: 16)
     end
   end
 end
