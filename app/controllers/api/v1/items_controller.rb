@@ -7,4 +7,8 @@ class Api::V1::ItemsController < Api::ApiController
   def show
     respond_with Item.find(params[:id].to_i)
   end
+
+  def destroy
+    respond_with Item.find(params[:id]).delete
+  end
 end
