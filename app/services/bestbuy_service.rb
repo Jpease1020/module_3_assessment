@@ -10,7 +10,8 @@ class BestbuyService
   end
 
   def product_search(search_words)
-    conn.get do |req|                           # GET http://sushi.com/search?page=2&limit=100
+    conn.get do |req|
+      # byebug                           # GET http://sushi.com/search?page=2&limit=100
       req.url "products(search=#{search_words})"
       # format=json
       req.params['format']     = 'json'
