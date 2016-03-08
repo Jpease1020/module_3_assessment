@@ -13,10 +13,9 @@ class BestbuyService
     search_words = search_words.split(" ")
     search_words = search_words.map do |word|
       "search=#{word}"
-    end
-    byebug
+    end.join("&")
     conn.get do |req|
-      req.url "products(search=#{search_words})"
+      req.url "products(#{search_words})"
       req.params['format']     = 'json'
       req.params['show']   = 'sku,name,customerReviewAverage,shortDescription,image,salePrice'
       req.params['pageSize'] = 15
