@@ -1,5 +1,11 @@
-<%= @products.each do |product| %>
+<% @products.each do |product| %>
   <div class="row">
-    product
-  </div>
+    <ul>
+      <li><%= product.sku %></li>
+      <li><%= product.name %></li>
+      <li><%= product.customerReviewAverage %></li>
+      <li><%= product.shortDescription %></li>
+      <li><%= product.image %></li>
+    </ul>
+  </div><br>
 <% end %>

@@ -17,7 +17,7 @@ class BestbuyService
       # show=sku,name,customerReviewAverage,shortDescription,image,salePrice
       req.params['show']   = 'sku,name,customerReviewAverage,shortDescription,image,salePrice'
       # pageSize=15
-      req.params['pageSize'] = '15'
+      req.params['pageSize'] = 15
       req.params['apiKey'] = '57f9xyfxh9ujc522eek6ugd4'
     end
   end
