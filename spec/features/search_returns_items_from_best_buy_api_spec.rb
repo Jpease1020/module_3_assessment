@@ -5,12 +5,12 @@ RSpec.describe "search returns items from bestbuy api", type: :feature do
     scenario "it returns items from bestbuy api" do
         visit '/'
 
-        VCR.use_cassette("product_search") do
+        VCR.use_cassette("product_search2") do
           fill_in("q", with: 'sennheiser')
           click_on "Search"
         end
 
-        expect(page).to have_content("Galaxy Audio")
+        expect(page).to have_content("9068004")
         expect(page).to have_css("#search-product", :count => 15)
     end
   end
