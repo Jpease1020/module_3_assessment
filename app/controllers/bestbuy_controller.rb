@@ -1,6 +1,7 @@
 class BestbuyController < ApplicationController
 
-  def search
-    response = BestbuyService.new.search(params[:q])
+  def index
+    @products = Product.all(params[:q])
+    # @products = BestbuyService.new.product_search(params[:q])
   end
 end

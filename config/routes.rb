@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  get 'search', to: 'bestbuy#search'
+  get 'search', to: 'bestbuy#index'
 
   resources :items,  only: [:index, :show]
   resources :orders, only: [:index, :show]
